@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cdoawh0otkqle"]
+
+[ext_resource type="Texture2D" uid="uid://c00531jw8yq3y" path="res://sprites/UI/tip.png" id="1_twyke"]
+[ext_resource type="Theme" uid="uid://cl8bv4ixivkhg" path="res://UI/theme.tres" id="2_ttj8n"]
+
+[node name="ToolTip" type="Control" unique_id=869211236]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=436867511]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -25.0
+offset_right = 34.0
+offset_bottom = 28.0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(33, 25)
+texture = ExtResource("1_twyke")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="." unique_id=879536474]
+texture_filter = 1
+layout_mode = 0
+offset_left = -80.0
+offset_top = -63.0
+offset_right = 38.0
+offset_bottom = -28.0
+theme = ExtResource("2_ttj8n")
+text = "Test"
+
+[node name="Label2" type="Label" parent="." unique_id=1140843741]
+texture_filter = 1
+layout_mode = 0
+offset_left = -81.0
+offset_top = -29.0
+offset_right = 85.0
+offset_bottom = 76.0
+theme = ExtResource("2_ttj8n")
+theme_override_font_sizes/font_size = 7
+text = "test test test test
+test"

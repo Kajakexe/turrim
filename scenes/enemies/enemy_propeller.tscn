@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://casdgqtyk3dfk"]
+
+[ext_resource type="PackedScene" uid="uid://bhdcm43tbrd0m" path="res://scenes/enemies/enemy_glider.tscn" id="1_j67hi"]
+[ext_resource type="Texture2D" uid="uid://7pub1rtp86x0" path="res://sprites/propeller.png" id="2_tcnn5"]
+[ext_resource type="Script" uid="uid://bdxjta2xaw8bn" path="res://scripts/enemies/enemy_propeller.gd" id="2_uaybb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tcnn5"]
+radius = 6.0
+height = 24.0
+
+[node name="enemy_propeller" unique_id=378458167 instance=ExtResource("1_j67hi")]
+script = ExtResource("2_uaybb")
+wave_frequency = 2.0
+wave_amplitude = 40.0
+speed = 50.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=910317938]
+texture = ExtResource("2_tcnn5")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(869955838) index="0" unique_id=585352286]
+position = Vector2(0.5507498, 18.102394)
+shape = SubResource("CapsuleShape2D_tcnn5")

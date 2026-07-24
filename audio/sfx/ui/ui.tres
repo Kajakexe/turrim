@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://btxsd8cf7gsxk"]
+
+[ext_resource type="AudioStream" uid="uid://bfyfbhbmkuqbm" path="res://audio/sfx/ui/impactSoft_medium_002.ogg" id="1_a7o11"]
+
+[resource]
+random_pitch = 1.1892071
+streams_count = 1
+stream_0/stream = ExtResource("1_a7o11")

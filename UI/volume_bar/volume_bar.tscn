@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cclpi7akehcwy"]
+
+[ext_resource type="Script" uid="uid://dg565crbr1515" path="res://scripts/UI/VolumeBar.gd" id="1_y08y2"]
+[ext_resource type="Texture2D" uid="uid://c6pyn0k5mg8sx" path="res://sprites/UI/volume_bar_sprite.png" id="2_3fayf"]
+
+[node name="VolumeBar" type="Control" unique_id=1091272907]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1746.0
+offset_bottom = -770.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y08y2")
+block_texture = ExtResource("2_3fayf")

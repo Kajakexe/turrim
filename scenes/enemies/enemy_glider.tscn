@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://bhdcm43tbrd0m"]
+
+[ext_resource type="Script" uid="uid://corsr51wbsp56" path="res://scripts/enemies/enemy_glider.gd" id="1_tvmq5"]
+[ext_resource type="AudioStream" uid="uid://bs74vv4shqaf1" path="res://audio/sfx/die/die.tres" id="2_350qu"]
+[ext_resource type="Texture2D" uid="uid://vqhubf3vfyfa" path="res://sprites/glider.png" id="2_ct6lk"]
+
+[sub_resource type="Animation" id="Animation_43jqk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uet4g"]
+resource_name = "die"
+length = 0.7
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14285715, 0.2857143, 0.42857143, 0.5714286),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2857143, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_death"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fxj70"]
+resource_name = "idle"
+length = 1.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0024517924, 0.102451794, 0.2024518, 0.3, 0.4, 0.5, 0.6, 0.7024518, 0.8, 0.90000004, 1, 1.0975482, 1.1975482, 1.2975483, 1.3975482, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.39816594, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.17453292519943295, 0.0, -0.17453292519943295]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uet4g"]
+_data = {
+&"RESET": SubResource("Animation_43jqk"),
+&"die": SubResource("Animation_uet4g"),
+&"idle": SubResource("Animation_fxj70")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2ds7"]
+radius = 6.0
+height = 24.0
+
+[node name="enemy_glider" type="Node2D" unique_id=378458167]
+script = ExtResource("1_tvmq5")
+speed = 30.0
+die_sfx = ExtResource("2_350qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=910317938]
+position = Vector2(0, 5)
+texture = ExtResource("2_ct6lk")
+hframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1028260375]
+libraries/ = SubResource("AnimationLibrary_uet4g")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=869955838]
+position = Vector2(0, -18)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=585352286]
+light_mask = 2
+position = Vector2(0, 27)
+shape = SubResource("CapsuleShape2D_v2ds7")
+
+[node name="hit_cooldown" type="Timer" parent="." unique_id=1180032386]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

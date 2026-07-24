@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://be8qbmt0fe144"]
+
+[ext_resource type="Texture2D" uid="uid://cd54vat5vo6j4" path="res://sprites/base.png" id="1_g2els"]
+[ext_resource type="Script" uid="uid://cwqmrrjai1glx" path="res://scripts/player.gd" id="1_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://c2deg6b1aukun" path="res://sprites/bow.png" id="2_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://dq50uvhy1fhom" path="res://audio/sfx/bow_release/bow_release.tres" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cannsstixgyj8" path="res://sprites/arrow.png" id="4_qlg0r"]
+
+[node name="player" type="Node2D" unique_id=1592232813]
+script = ExtResource("1_qhqgy")
+bow_release_sfx = ExtResource("2_qlg0r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866216323]
+z_as_relative = false
+texture_filter = 3
+texture = ExtResource("1_g2els")
+hframes = 22
+
+[node name="anchor" type="Node2D" parent="." unique_id=807981802]
+
+[node name="bow" type="Sprite2D" parent="anchor" unique_id=1599494165]
+texture_filter = 3
+position = Vector2(10, 0)
+texture = ExtResource("2_qhqgy")
+hframes = 4
+
+[node name="Marker2D" type="Marker2D" parent="anchor" unique_id=1145029783]
+position = Vector2(14, 0)
+
+[node name="arrow_fake" type="Sprite2D" parent="anchor" unique_id=1540710547]
+texture_filter = 1
+position = Vector2(10, 0)
+rotation = 1.5707964
+texture = ExtResource("4_qlg0r")
+
+[node name="arrows" type="Node2D" parent="." unique_id=1790886631]
+
+[node name="cooldown" type="Timer" parent="." unique_id=910046101]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

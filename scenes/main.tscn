@@ -1,0 +1,1365 @@
+[gd_scene format=3 uid="uid://dsjqjn85nbvor"]
+
+[ext_resource type="Script" uid="uid://bohvhw6l47mul" path="res://scripts/main.gd" id="1_gqmmt"]
+[ext_resource type="Script" uid="uid://etjr6seobxt6" path="res://scripts/backround.gd" id="1_muem4"]
+[ext_resource type="Texture2D" uid="uid://g4wee5qil1e" path="res://sprites/backround/1.png" id="2_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://dn1trq0j3blp2" path="res://sprites/backround/2.png" id="3_0ld40"]
+[ext_resource type="Texture2D" uid="uid://xdaaydmpvmga" path="res://sprites/backround/3.png" id="4_gqmmt"]
+[ext_resource type="Texture2D" uid="uid://cnc52bu7rysgn" path="res://sprites/aim.png" id="5_yc10j"]
+[ext_resource type="Texture2D" uid="uid://dehrbk1g1vbyy" path="res://sprites/tower_back.png" id="6_jscy8"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="7_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://xy2nhrebe6oq" path="res://sprites/wanted.png" id="7_tel4y"]
+[ext_resource type="Texture2D" uid="uid://b1ycxaxywghph" path="res://sprites/tower_front.png" id="8_y6deb"]
+[ext_resource type="Texture2D" uid="uid://cptexgg8irxbp" path="res://sprites/floor.png" id="9_og1vs"]
+[ext_resource type="Script" uid="uid://cihvxnvoa0xce" path="res://scripts/spawner.gd" id="10_2wyq8"]
+[ext_resource type="Script" uid="uid://barltb4503i1r" path="res://scripts/UI/canvas.gd" id="11_vxglm"]
+[ext_resource type="Script" uid="uid://44yitrd38ee6" path="res://scripts/UI/main_menu.gd" id="12_2f3dj"]
+[ext_resource type="Script" uid="uid://b7m1wxbggnv1u" path="res://scripts/UI/hud.gd" id="13_jscy8"]
+[ext_resource type="Texture2D" uid="uid://b3uxxk0u4qr86" path="res://sprites/UI/book.png" id="13_yq6so"]
+[ext_resource type="Texture2D" uid="uid://bjakoh1tw5nlc" path="res://sprites/UI/card_red.png" id="14_fv21b"]
+[ext_resource type="Texture2D" uid="uid://beet0nrcks887" path="res://sprites/UI/Cards-Sheet.png" id="14_jscy8"]
+[ext_resource type="Texture2D" uid="uid://q7c0gtmqhe68" path="res://sprites/UI/card_back.png" id="15_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://bl6d0lod8jvk1" path="res://sprites/UI/card_blue.png" id="15_tel4y"]
+[ext_resource type="AudioStream" uid="uid://btxsd8cf7gsxk" path="res://audio/sfx/ui/ui.tres" id="16_5q0nq"]
+[ext_resource type="Texture2D" uid="uid://oyppj74w6avh" path="res://sprites/UI/card_lila.png" id="16_qkpxi"]
+[ext_resource type="PackedScene" uid="uid://cdoawh0otkqle" path="res://UI/scenes/tool_tip.tscn" id="17_5q0nq"]
+[ext_resource type="Texture2D" uid="uid://c4l54mb67b5rt" path="res://sprites/UI/control.png" id="17_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://drmljeelund7l" path="res://sprites/UI/play.png" id="18_0ld40"]
+[ext_resource type="PackedScene" uid="uid://cclpi7akehcwy" path="res://UI/volume_bar/volume_bar.tscn" id="24_dgi5k"]
+[ext_resource type="AudioStream" uid="uid://b36462p81fq8r" path="res://audio/sfx/card_counted/card_counted.tres" id="24_vxglm"]
+[ext_resource type="Theme" uid="uid://cl8bv4ixivkhg" path="res://UI/theme.tres" id="24_y6deb"]
+[ext_resource type="AudioStream" uid="uid://becxb00ate1nw" path="res://audio/sfx/card_collect/card_collect.tres" id="24_yq6so"]
+[ext_resource type="AudioStream" uid="uid://dyoesvcx4tfoj" path="res://audio/sfx/card_falling/card_falling.tres" id="25_fv21b"]
+[ext_resource type="Texture2D" uid="uid://dtvojomb73cv6" path="res://sprites/UI/name_tag_label.png" id="25_og1vs"]
+[ext_resource type="Script" uid="uid://bfnqk8sqhtgby" path="res://scripts/UI/game_over_info.gd" id="26_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://3qkqwak7kprm" path="res://sprites/UI/highscore_board.png" id="26_j8jky"]
+[ext_resource type="Script" uid="uid://bybaph0fd8xse" path="res://scripts/UI/scoreboard.gd" id="26_kmb1v"]
+[ext_resource type="PackedScene" uid="uid://bhni8o1toxell" path="res://scenes/enemies/enemy_triplets.tscn" id="30_fv21b"]
+[ext_resource type="Script" uid="uid://c7t7kus8e1o7" path="res://scripts/client.gd" id="33_5q0nq"]
+
+[sub_resource type="Animation" id="Animation_ff6ho"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("03:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("01/02:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jcd4p"]
+resource_name = "idle"
+length = 240.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("03:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120, 120.003006, 240),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-575.758, 0), Vector2(0, 0), Vector2(-575.758, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("01/02:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 240),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-575.758, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jxlq"]
+_data = {
+&"RESET": SubResource("Animation_ff6ho"),
+&"idle": SubResource("Animation_jcd4p")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2ds7"]
+radius = 16.03122
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
+texture = ExtResource("9_og1vs")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v2ds7"]
+sources/0 = SubResource("TileSetAtlasSource_74lek")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2ds7"]
+size = Vector2(1504, 20)
+
+[sub_resource type="Environment" id="Environment_v2ds7"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.16
+glow_hdr_threshold = 1.15
+adjustment_enabled = true
+adjustment_saturation = 1.11
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oieh5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wsa4l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go05t"]
+
+[sub_resource type="Animation" id="Animation_pm3ni"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%HUD:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(483, 297)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Camera2D:zoom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.045, 2.045)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Spawner/enemy_container:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../foreground:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HUD/GameOver:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HUD/GameOver:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("HUD/GameOver:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_gqmmt"]
+resource_name = "blend_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%HUD:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../foreground:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Camera2D:zoom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.675, 0.675)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Camera2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(483, 291.725)]
+}
+
+[sub_resource type="Animation" id="Animation_yc10j"]
+resource_name = "blend_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.9333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"reload"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_y6deb"]
+resource_name = "game_over"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(483, 291.725), Vector2(483, 226.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.675, 0.675), Vector2(0.902, 0.902)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.75686276)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Spawner/enemy_container:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%HUD")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"trigger_game_over_card_drop"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HUD/GameOver:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HUD/GameOver:modulate")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.6333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("%HUD:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HUD/GameOver:scale")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.6333333, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jscy8"]
+resource_name = "game_start"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../foreground:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"game_start_ani_finished"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MainMenu:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.69),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HUD:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.6959406),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yc10j"]
+_data = {
+&"RESET": SubResource("Animation_pm3ni"),
+&"blend_in": SubResource("Animation_gqmmt"),
+&"blend_out": SubResource("Animation_yc10j"),
+&"game_over": SubResource("Animation_y6deb"),
+&"game_start": SubResource("Animation_jscy8")
+}
+
+[node name="main" type="Node2D" unique_id=889438347]
+script = ExtResource("1_gqmmt")
+
+[node name="backround" type="Node2D" parent="." unique_id=428829428]
+position = Vector2(482.00003, 296.00003)
+scale = Vector2(1.65, 1.65)
+script = ExtResource("1_muem4")
+
+[node name="backround" type="AnimationPlayer" parent="backround" unique_id=1874465939]
+libraries/ = SubResource("AnimationLibrary_5jxlq")
+
+[node name="01" type="Node2D" parent="backround" unique_id=2144083770]
+
+[node name="Sprite2D" type="Sprite2D" parent="backround/01" unique_id=14897574]
+texture = ExtResource("2_dp3eg")
+
+[node name="02" type="Node2D" parent="backround/01" unique_id=275023229]
+
+[node name="Sprite2D" type="Sprite2D" parent="backround/01/02" unique_id=1624003603]
+texture = ExtResource("3_0ld40")
+
+[node name="Sprite2D2" type="Sprite2D" parent="backround/01/02" unique_id=871227355]
+position = Vector2(575.75757, 0)
+texture = ExtResource("3_0ld40")
+
+[node name="03" type="Node2D" parent="backround" unique_id=1730371547]
+
+[node name="Sprite2D" type="Sprite2D" parent="backround/03" unique_id=314689241]
+texture = ExtResource("4_gqmmt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="backround/03" unique_id=1097957456]
+position = Vector2(575.75757, 0)
+texture = ExtResource("4_gqmmt")
+
+[node name="foreground" type="Node2D" parent="." unique_id=1964638307]
+visible = false
+position = Vector2(-3.0517578e-05, 0)
+
+[node name="aim" type="Sprite2D" parent="foreground" unique_id=144735846]
+modulate = Color(18.892157, 18.892157, 18.892157, 0.53000003)
+texture_filter = 3
+position = Vector2(480.00003, 466)
+texture = ExtResource("5_yc10j")
+
+[node name="game_over" type="Area2D" parent="foreground" unique_id=1455145710]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(481.00003, 528)
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/game_over" unique_id=1575165645]
+shape = SubResource("CircleShape2D_v2ds7")
+
+[node name="game_over_air" type="Area2D" parent="foreground" unique_id=132093490]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(480.00003, 365)
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/game_over_air" unique_id=1698366635]
+shape = SubResource("CircleShape2D_v2ds7")
+
+[node name="tower" type="Node2D" parent="foreground" unique_id=1683710701]
+
+[node name="Sprite2D2" type="Sprite2D" parent="foreground/tower" unique_id=198733517]
+texture_filter = 1
+position = Vector2(479.00003, 519)
+texture = ExtResource("6_jscy8")
+
+[node name="player" parent="foreground/tower" unique_id=1592232813 instance=ExtResource("7_pm3ni")]
+z_index = 100
+position = Vector2(480.00003, 466)
+
+[node name="Sprite2D" type="Sprite2D" parent="foreground/tower" unique_id=1549987648]
+texture_filter = 1
+position = Vector2(479.00003, 519)
+texture = ExtResource("8_y6deb")
+
+[node name="wanted_floor" type="Sprite2D" parent="foreground" unique_id=1029166958]
+modulate = Color(1, 1, 1, 0.5058824)
+position = Vector2(481.00003, 528)
+texture = ExtResource("7_tel4y")
+
+[node name="wanted_air" type="Sprite2D" parent="foreground" unique_id=1138743119]
+modulate = Color(1, 1, 1, 0.5058824)
+position = Vector2(480.00003, 365)
+texture = ExtResource("7_tel4y")
+
+[node name="TileMap" type="TileMap" parent="foreground" unique_id=440292854]
+texture_filter = 3
+position = Vector2(3.0517578e-05, 0)
+tile_set = SubResource("TileSet_v2ds7")
+format = 2
+layer_0/tile_data = PackedInt32Array(2228224, 0, 0, 2293760, 0, 1, 2228225, 65536, 0, 2293761, 65536, 1, 2228226, 0, 0, 2293762, 0, 1, 2228227, 65536, 0, 2293763, 65536, 1, 2228228, 0, 0, 2293764, 0, 1, 2228229, 65536, 0, 2293765, 65536, 1, 2228230, 0, 0, 2293766, 0, 1, 2228231, 65536, 0, 2293767, 65536, 1, 2228232, 0, 0, 2293768, 0, 1, 2228233, 65536, 0, 2293769, 65536, 1, 2228234, 0, 0, 2293770, 0, 1, 2228235, 65536, 0, 2293771, 65536, 1, 2228236, 0, 0, 2293772, 0, 1, 2228237, 65536, 0, 2293773, 65536, 1, 2228238, 0, 0, 2293774, 0, 1, 2228239, 65536, 0, 2293775, 65536, 1, 2228240, 0, 0, 2293776, 0, 1, 2228241, 65536, 0, 2293777, 65536, 1, 2228242, 0, 0, 2293778, 0, 1, 2228243, 65536, 0, 2293779, 65536, 1, 2228244, 0, 0, 2293780, 0, 1, 2228245, 65536, 0, 2293781, 65536, 1, 2228246, 0, 0, 2293782, 0, 1, 2228247, 65536, 0, 2293783, 65536, 1, 2228248, 0, 0, 2293784, 0, 1, 2228249, 65536, 0, 2293785, 65536, 1, 2228250, 0, 0, 2293786, 0, 1, 2228251, 65536, 0, 2293787, 65536, 1, 2228252, 0, 0, 2293788, 0, 1, 2228253, 65536, 0, 2293789, 65536, 1, 2228254, 0, 0, 2293790, 0, 1, 2228255, 65536, 0, 2293791, 65536, 1, 2228256, 0, 0, 2293792, 0, 1, 2228257, 65536, 0, 2293793, 65536, 1, 2228258, 0, 0, 2293794, 0, 1, 2228259, 65536, 0, 2293795, 65536, 1, 2228260, 0, 0, 2293796, 0, 1, 2228261, 65536, 0, 2293797, 65536, 1, 2228262, 0, 0, 2293798, 0, 1, 2228263, 65536, 0, 2293799, 65536, 1, 2228264, 0, 0, 2293800, 0, 1, 2228265, 65536, 0, 2293801, 65536, 1, 2228266, 0, 0, 2293802, 0, 1, 2228267, 65536, 0, 2293803, 65536, 1, 2228268, 0, 0, 2293804, 0, 1, 2228269, 65536, 0, 2293805, 65536, 1, 2228270, 0, 0, 2293806, 0, 1, 2228271, 65536, 0, 2293807, 65536, 1, 2228272, 0, 0, 2293808, 0, 1, 2228273, 65536, 0, 2293809, 65536, 1, 2228274, 0, 0, 2293810, 0, 1, 2228275, 65536, 0, 2293811, 65536, 1, 2228276, 0, 0, 2293812, 0, 1, 2228277, 65536, 0, 2293813, 65536, 1, 2228278, 0, 0, 2293814, 0, 1, 2228279, 65536, 0, 2293815, 65536, 1, 2228280, 0, 0, 2293816, 0, 1, 2228281, 65536, 0, 2293817, 65536, 1, 2228282, 0, 0, 2293818, 0, 1, 2228283, 65536, 0, 2293819, 65536, 1, 2228284, 0, 0, 2293820, 0, 1, 2228285, 65536, 0, 2293821, 65536, 1, 2228286, 0, 0, 2293822, 0, 1, 2228287, 65536, 0, 2293823, 65536, 1, 2228288, 0, 0, 2293824, 0, 1, 2228289, 65536, 0, 2293825, 65536, 1, 2228290, 0, 0, 2293826, 0, 1, 2228291, 65536, 0, 2293827, 65536, 1, 2228292, 0, 0, 2293828, 0, 1, 2228293, 65536, 0, 2293829, 65536, 1, 2228294, 0, 0, 2293830, 0, 1, 2228295, 65536, 0, 2293831, 65536, 1, 2228296, 0, 0, 2293832, 0, 1, 2228297, 65536, 0, 2293833, 65536, 1, 2228298, 0, 0, 2293834, 0, 1, 2228299, 65536, 0, 2293835, 65536, 1, 2228300, 0, 0, 2293836, 0, 1, 2228301, 65536, 0, 2293837, 65536, 1, 2228302, 0, 0, 2293838, 0, 1, 2228303, 65536, 0, 2293839, 65536, 1, 2228304, 0, 0, 2293840, 0, 1, 2228305, 65536, 0, 2293841, 65536, 1, 2228306, 0, 0, 2293842, 0, 1, 2228307, 65536, 0, 2293843, 65536, 1, 2228308, 0, 0, 2293844, 0, 1, 2228309, 65536, 0, 2293845, 65536, 1, 2228310, 0, 0, 2293846, 0, 1, 2228311, 65536, 0, 2293847, 65536, 1, 2228312, 0, 0, 2293848, 0, 1, 2228313, 65536, 0, 2293849, 65536, 1, 2228314, 0, 0, 2293850, 0, 1, 2228315, 65536, 0, 2293851, 65536, 1, 2228316, 0, 0, 2293852, 0, 1, 2228317, 65536, 0, 2293853, 65536, 1)
+
+[node name="Area2D" type="Area2D" parent="foreground/TileMap" unique_id=2023061824]
+position = Vector2(752, 554)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foreground/TileMap/Area2D" unique_id=1490221187]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_v2ds7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=26341442]
+position = Vector2(483, 297)
+zoom = Vector2(2.045, 2.045)
+
+[node name="Spawner" type="Node" parent="." unique_id=1811984593]
+script = ExtResource("10_2wyq8")
+
+[node name="cicle" type="Timer" parent="Spawner" unique_id=529684484]
+wait_time = 60.0
+
+[node name="recovery" type="Timer" parent="Spawner" unique_id=921682080]
+wait_time = 15.0
+
+[node name="buildup" type="Timer" parent="Spawner" unique_id=1362103450]
+wait_time = 30.0
+
+[node name="peak" type="Timer" parent="Spawner" unique_id=1695130447]
+wait_time = 10.0
+
+[node name="spawn" type="Timer" parent="Spawner" unique_id=193337909]
+wait_time = 9.975
+
+[node name="enemy_container" type="Node2D" parent="Spawner" unique_id=1015032796]
+
+[node name="enemy_triplets" parent="Spawner/enemy_container" unique_id=591598459 node_paths=PackedStringArray("target_node") instance=ExtResource("30_fv21b")]
+position = Vector2(-107, 506)
+scale = Vector2(2e-05, 2e-05)
+target_node = NodePath("../../center")
+
+[node name="spawnpoints_floor" type="Node2D" parent="Spawner" unique_id=994967985]
+position = Vector2(1, 0)
+
+[node name="Marker2D" type="Marker2D" parent="Spawner/spawnpoints_floor" unique_id=439098481]
+position = Vector2(975, 533)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawner/spawnpoints_floor" unique_id=376652677]
+position = Vector2(-26, 533)
+
+[node name="spawnpoints_air" type="Node2D" parent="Spawner" unique_id=1524397974]
+
+[node name="Marker2D" type="Marker2D" parent="Spawner/spawnpoints_air" unique_id=26661095]
+position = Vector2(-82, 134)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawner/spawnpoints_air" unique_id=1308811111]
+position = Vector2(1059, 144)
+
+[node name="Marker2D5" type="Marker2D" parent="Spawner/spawnpoints_air" unique_id=955032803]
+position = Vector2(1090, 280)
+
+[node name="Marker2D6" type="Marker2D" parent="Spawner/spawnpoints_air" unique_id=493471303]
+position = Vector2(-124, 307)
+
+[node name="center" type="Marker2D" parent="Spawner" unique_id=837193732]
+position = Vector2(481, 528)
+
+[node name="center_air" type="Marker2D" parent="Spawner" unique_id=168081172]
+position = Vector2(480, 365)
+
+[node name="debug_layer" type="CanvasLayer" parent="Spawner" unique_id=1649128744]
+
+[node name="debug_label" type="Label" parent="Spawner/debug_layer" unique_id=331966310]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1195181024]
+environment = SubResource("Environment_v2ds7")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1990320017]
+follow_viewport_enabled = true
+script = ExtResource("11_vxglm")
+
+[node name="MainMenu" type="Control" parent="UI" unique_id=1993450184]
+custom_minimum_size = Vector2(31.015, 37.51)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("12_2f3dj")
+hover_sound = ExtResource("16_5q0nq")
+
+[node name="book" type="TextureRect" parent="UI/MainMenu" unique_id=503515119]
+layout_mode = 0
+offset_top = 29.285
+offset_right = 256.0
+offset_bottom = 173.285
+scale = Vector2(3.731, 3.731)
+mouse_filter = 2
+texture = ExtResource("13_yq6so")
+
+[node name="scoreboard" type="Control" parent="UI/MainMenu" unique_id=1388834293]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("26_kmb1v")
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainMenu/scoreboard" unique_id=1626396593]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 122.0
+offset_right = 771.0
+offset_bottom = 446.0
+mouse_filter = 2
+texture = ExtResource("26_j8jky")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MainMenu/scoreboard" unique_id=2064066296]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 141.0
+offset_right = 794.0
+offset_bottom = 431.0
+theme_override_constants/separation = 3
+
+[node name="places" type="VBoxContainer" parent="UI/MainMenu/scoreboard/HBoxContainer" unique_id=245550404]
+custom_minimum_size = Vector2(43.12, 0)
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="Label" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/places" unique_id=1241176196]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/places" unique_id=812228813]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/places" unique_id=2121646260]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/places" unique_id=380816097]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/places" unique_id=1468498041]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/places" unique_id=1087165917]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="name" type="VBoxContainer" parent="UI/MainMenu/scoreboard/HBoxContainer" unique_id=843730154]
+custom_minimum_size = Vector2(113.505, 0)
+layout_mode = 2
+theme_override_constants/separation = 29
+
+[node name="Label" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/name" unique_id=2078925761]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+clip_text = true
+
+[node name="Label2" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/name" unique_id=812380566]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+clip_text = true
+
+[node name="Label3" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/name" unique_id=1491449358]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+clip_text = true
+
+[node name="Label4" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/name" unique_id=208975405]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+clip_text = true
+
+[node name="Label5" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/name" unique_id=220757047]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+clip_text = true
+
+[node name="Label6" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/name" unique_id=147907103]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+clip_text = true
+
+[node name="points" type="VBoxContainer" parent="UI/MainMenu/scoreboard/HBoxContainer" unique_id=1171678941]
+custom_minimum_size = Vector2(83.68, 0)
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Label" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/points" unique_id=1256954217]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/points" unique_id=308770508]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/points" unique_id=179125599]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/points" unique_id=1999805957]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/points" unique_id=241213536]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="UI/MainMenu/scoreboard/HBoxContainer/points" unique_id=698876178]
+layout_mode = 2
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.03137255, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="MenuContainer" type="VBoxContainer" parent="UI/MainMenu" unique_id=1209401387]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 116.0
+offset_right = 466.0
+offset_bottom = 451.89
+mouse_filter = 2
+
+[node name="cards" type="HBoxContainer" parent="UI/MainMenu/MenuContainer" unique_id=1841133227]
+custom_minimum_size = Vector2(0, 78.87)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="red" type="Control" parent="UI/MainMenu/MenuContainer/cards" unique_id=814153557]
+custom_minimum_size = Vector2(75.555, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="red" type="TextureRect" parent="UI/MainMenu/MenuContainer/cards/red" unique_id=670787159]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 57.0
+offset_bottom = 73.0
+pivot_offset = Vector2(27.5, 32.805)
+mouse_filter = 0
+texture = ExtResource("14_fv21b")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Control" type="Control" parent="UI/MainMenu/MenuContainer/cards" unique_id=1250629350]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+
+[node name="blue" type="Control" parent="UI/MainMenu/MenuContainer/cards" unique_id=192656728]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="blue" type="TextureRect" parent="UI/MainMenu/MenuContainer/cards/blue" unique_id=776720340]
+custom_minimum_size = Vector2(8.315, 0)
+layout_mode = 0
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 57.0
+offset_bottom = 62.0
+pivot_offset = Vector2(27.5, 32.805)
+mouse_filter = 0
+texture = ExtResource("15_tel4y")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Control2" type="Control" parent="UI/MainMenu/MenuContainer/cards" unique_id=2022273202]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+
+[node name="lila" type="Control" parent="UI/MainMenu/MenuContainer/cards" unique_id=697335365]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="lila" type="TextureRect" parent="UI/MainMenu/MenuContainer/cards/lila" unique_id=1866271906]
+custom_minimum_size = Vector2(8.315, 0)
+layout_mode = 0
+offset_top = -7.0
+offset_right = 63.165
+offset_bottom = 60.0
+pivot_offset = Vector2(27.5, 32.805)
+mouse_filter = 0
+texture = ExtResource("16_qkpxi")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="control" type="Control" parent="UI/MainMenu/MenuContainer" unique_id=2071135457]
+custom_minimum_size = Vector2(85.425, 126.16)
+layout_mode = 2
+
+[node name="control" type="TextureRect" parent="UI/MainMenu/MenuContainer/control" unique_id=1592581677]
+layout_mode = 0
+offset_right = 247.707
+offset_bottom = 131.105
+pivot_offset = Vector2(27.5, 32.805)
+mouse_filter = 0
+texture = ExtResource("17_dp3eg")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="play" type="Control" parent="UI/MainMenu/MenuContainer" unique_id=967074686]
+custom_minimum_size = Vector2(85.425, 91.58)
+layout_mode = 2
+
+[node name="play" type="TextureRect" parent="UI/MainMenu/MenuContainer/play" unique_id=495015541]
+layout_mode = 0
+offset_right = 247.707
+offset_bottom = 131.105
+pivot_offset = Vector2(27.5, 32.805)
+mouse_filter = 0
+texture = ExtResource("18_0ld40")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ToolTips" type="Control" parent="UI/MainMenu" unique_id=464463055]
+anchors_preset = 0
+offset_left = 534.0
+offset_top = 206.0
+offset_right = 574.0
+offset_bottom = 246.0
+mouse_filter = 2
+
+[node name="red" type="Control" parent="UI/MainMenu/ToolTips" unique_id=375589687]
+anchors_preset = 0
+
+[node name="ToolTip" parent="UI/MainMenu/ToolTips/red" unique_id=869211236 instance=ExtResource("17_5q0nq")]
+layout_mode = 1
+mouse_filter = 2
+
+[node name="TextureRect" parent="UI/MainMenu/ToolTips/red/ToolTip" index="0" unique_id=436867511]
+mouse_filter = 2
+
+[node name="Label" parent="UI/MainMenu/ToolTips/red/ToolTip" index="1" unique_id=879536474]
+text = "Red"
+
+[node name="Label2" parent="UI/MainMenu/ToolTips/red/ToolTip" index="2" unique_id=1140843741]
+theme_override_font_sizes/font_size = 8
+text = "Floor enemies
+that move
+directly 
+toward you."
+
+[node name="blue" type="Control" parent="UI/MainMenu/ToolTips" unique_id=1051158808]
+anchors_preset = 0
+
+[node name="ToolTip" parent="UI/MainMenu/ToolTips/blue" unique_id=707736262 instance=ExtResource("17_5q0nq")]
+layout_mode = 1
+mouse_filter = 2
+
+[node name="TextureRect" parent="UI/MainMenu/ToolTips/blue/ToolTip" index="0" unique_id=436867511]
+mouse_filter = 2
+
+[node name="Label" parent="UI/MainMenu/ToolTips/blue/ToolTip" index="1" unique_id=879536474]
+text = "Blue"
+
+[node name="Label2" parent="UI/MainMenu/ToolTips/blue/ToolTip" index="2" unique_id=1140843741]
+theme_override_font_sizes/font_size = 8
+text = "Flying
+enemies
+that attack
+from above."
+
+[node name="lila" type="Control" parent="UI/MainMenu/ToolTips" unique_id=1916062035]
+anchors_preset = 0
+
+[node name="ToolTip" parent="UI/MainMenu/ToolTips/lila" unique_id=211070291 instance=ExtResource("17_5q0nq")]
+layout_mode = 1
+mouse_filter = 2
+
+[node name="TextureRect" parent="UI/MainMenu/ToolTips/lila/ToolTip" index="0" unique_id=436867511]
+mouse_filter = 2
+
+[node name="Label" parent="UI/MainMenu/ToolTips/lila/ToolTip" index="1" unique_id=879536474]
+text = "Purple"
+
+[node name="Label2" parent="UI/MainMenu/ToolTips/lila/ToolTip" index="2" unique_id=1140843741]
+texture_filter = 0
+offset_right = 86.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 8
+text = "Enemies
+that require a
+specific strategy
+to defeat."
+
+[node name="control" type="Control" parent="UI/MainMenu/ToolTips" unique_id=246024535]
+anchors_preset = 0
+
+[node name="ToolTip" parent="UI/MainMenu/ToolTips/control" unique_id=1328642989 instance=ExtResource("17_5q0nq")]
+layout_mode = 1
+mouse_filter = 2
+
+[node name="TextureRect" parent="UI/MainMenu/ToolTips/control/ToolTip" index="0" unique_id=436867511]
+mouse_filter = 2
+
+[node name="Label" parent="UI/MainMenu/ToolTips/control/ToolTip" index="1" unique_id=879536474]
+offset_left = -81.0
+offset_top = -61.0
+offset_right = 37.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 13
+text = "Control"
+
+[node name="Label2" parent="UI/MainMenu/ToolTips/control/ToolTip" index="2" unique_id=1140843741]
+text = "Left click and
+hold to draw the
+bow and aim.
+Release it
+to shoot."
+
+[node name="play" type="Control" parent="UI/MainMenu/ToolTips" unique_id=356214575]
+anchors_preset = 0
+
+[node name="ToolTip" parent="UI/MainMenu/ToolTips/play" unique_id=2083992843 instance=ExtResource("17_5q0nq")]
+layout_mode = 1
+mouse_filter = 2
+
+[node name="TextureRect" parent="UI/MainMenu/ToolTips/play/ToolTip" index="0" unique_id=436867511]
+mouse_filter = 2
+
+[node name="Label" parent="UI/MainMenu/ToolTips/play/ToolTip" index="1" unique_id=879536474]
+offset_left = -81.0
+offset_top = -61.0
+offset_right = 37.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 13
+text = "Play"
+
+[node name="Label2" parent="UI/MainMenu/ToolTips/play/ToolTip" index="2" unique_id=1140843741]
+theme_override_font_sizes/font_size = 9
+text = "Battle endless 
+waves.
+Score points. 
+Survive."
+
+[node name="Label2" type="Label" parent="UI/MainMenu" unique_id=1612392645]
+layout_mode = 0
+offset_left = 841.0
+offset_top = 122.0
+offset_right = 881.0
+offset_bottom = 152.0
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.27299997, 0.27299997, 0.42, 1)
+theme_override_font_sizes/font_size = 18
+text = "S"
+
+[node name="sfx_bar" parent="UI/MainMenu" unique_id=1231982801 instance=ExtResource("24_dgi5k")]
+layout_mode = 1
+offset_left = 848.0
+offset_top = 163.0
+offset_right = 808.0
+offset_bottom = 165.66675
+scale = Vector2(1.5, 1.5)
+bus_name = "SFX"
+max_blocks = 18
+block_spacing = 6.0
+
+[node name="Label3" type="Label" parent="UI/MainMenu" unique_id=508033767]
+layout_mode = 0
+offset_left = 891.0
+offset_top = 122.0
+offset_right = 931.0
+offset_bottom = 152.0
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.45, 0.17549999, 0.18007493, 1)
+theme_override_font_sizes/font_size = 18
+text = "M"
+
+[node name="music_bar" parent="UI/MainMenu" unique_id=1091272907 instance=ExtResource("24_dgi5k")]
+layout_mode = 1
+offset_left = 898.0
+offset_top = 163.0
+offset_right = 858.0
+offset_bottom = 165.66675
+scale = Vector2(1.5, 1.5)
+bus_name = "Music"
+max_blocks = 18
+block_spacing = 6.0
+
+[node name="Bars" type="Control" parent="UI" unique_id=401670621]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 841.0
+offset_top = 122.0
+offset_right = 881.0
+offset_bottom = 162.0
+
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=1925957205]
+custom_minimum_size = Vector2(9.68, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = 23.0
+offset_right = 450.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control" parent="UI" unique_id=59768626 node_paths=PackedStringArray("score_label", "name_input_field")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 218.0
+offset_top = 93.0
+offset_right = 258.0
+offset_bottom = 133.0
+scale = Vector2(2, 2)
+mouse_filter = 2
+script = ExtResource("13_jscy8")
+card_spritesheet = ExtResource("14_jscy8")
+card_back_texture = ExtResource("15_pm3ni")
+card_width = 48
+card_height = 64
+score_label = NodePath("GameOver/Score")
+card_collect_sfx = ExtResource("24_yq6so")
+card_counted_sfx = ExtResource("24_vxglm")
+card_falling_sfx = ExtResource("25_fv21b")
+name_input_field = NodePath("GameOver/nametag")
+
+[node name="CardDisplay" type="TextureRect" parent="UI/HUD" unique_id=1717586787]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="DiscardStack" type="Control" parent="UI/HUD" unique_id=256143608]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="draw_marker" type="Marker2D" parent="UI/HUD" unique_id=981722793]
+position = Vector2(116, 82)
+scale = Vector2(0.49999994, 0.49999994)
+
+[node name="active_marker" type="Marker2D" parent="UI/HUD" unique_id=381841776]
+position = Vector2(144.5, 56)
+scale = Vector2(0.49999994, 0.49999994)
+
+[node name="discard_marker" type="Marker2D" parent="UI/HUD" unique_id=772579121]
+position = Vector2(124, -5)
+scale = Vector2(0.49999994, 0.49999994)
+
+[node name="GameOver" type="Control" parent="UI/HUD" unique_id=105904302]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_left = -40.397747
+offset_top = 59.545147
+offset_right = 296.124
+offset_bottom = 111.980255
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(172.545, 27.715)
+
+[node name="Score" type="Label" parent="UI/HUD/GameOver" unique_id=813288481]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.5
+offset_top = 38.0
+offset_right = 130.5
+offset_bottom = 72.5
+pivot_offset = Vector2(58.955, 15.44)
+theme = ExtResource("24_y6deb")
+theme_override_font_sizes/font_size = 12
+text = "00000"
+
+[node name="TextureRect" type="TextureRect" parent="UI/HUD/GameOver" unique_id=1635893675]
+modulate = Color(0.99215686, 0.90588236, 0.77254903, 1)
+layout_mode = 0
+offset_left = 235.73438
+offset_top = 33.967064
+offset_right = 359.61926
+offset_bottom = 67.43595
+texture = ExtResource("25_og1vs")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="nametag" type="LineEdit" parent="UI/HUD/GameOver" unique_id=2106145937]
+custom_maximum_size = Vector2(109.315, -1)
+layout_mode = 0
+offset_left = 235.73438
+offset_top = 34.966145
+offset_right = 345.04938
+offset_bottom = 65.96615
+theme = ExtResource("24_y6deb")
+theme_override_colors/font_color = Color(0.99215686, 0.90588236, 0.77254903, 1)
+theme_override_colors/font_placeholder_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_constants/caret_width = 0
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oieh5")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_wsa4l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_go05t")
+alignment = 1
+max_length = 5
+virtual_keyboard_enabled = false
+virtual_keyboard_show_on_focus = false
+caret_mid_grapheme = true
+
+[node name="game_over_info" type="Label" parent="UI/HUD/GameOver" unique_id=253974104]
+visible = false
+layout_mode = 0
+offset_left = 240.72974
+offset_top = 3.4953995
+offset_right = 769.72974
+offset_bottom = 71.4954
+theme = ExtResource("24_y6deb")
+theme_override_font_sizes/font_size = 5
+text = "write name and 
+press Enter"
+script = ExtResource("26_2wyq8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI" unique_id=911320571]
+libraries/ = SubResource("AnimationLibrary_yc10j")
+
+[node name="client" type="Node" parent="." unique_id=461907680]
+unique_name_in_owner = true
+script = ExtResource("33_5q0nq")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="client" unique_id=1121498616]
+
+[connection signal="area_entered" from="foreground/game_over" to="." method="_on_game_over_area_entered"]
+[connection signal="area_entered" from="foreground/game_over_air" to="." method="_on_game_over_area_entered"]
+[connection signal="timeout" from="Spawner/cicle" to="Spawner" method="_on_cicle_timeout"]
+[connection signal="timeout" from="Spawner/recovery" to="Spawner" method="_on_recovery_timeout"]
+[connection signal="timeout" from="Spawner/buildup" to="Spawner" method="_on_buildup_timeout"]
+[connection signal="timeout" from="Spawner/peak" to="Spawner" method="_on_peak_timeout"]
+[connection signal="timeout" from="Spawner/spawn" to="Spawner" method="_on_spawn_timeout"]
+[connection signal="game_start" from="UI/MainMenu" to="." method="_on_main_menu_game_start"]
+[connection signal="text_submitted" from="UI/HUD/GameOver/nametag" to="UI/HUD" method="_on_nametag_text_submitted"]
+
+[editable path="UI/MainMenu/ToolTips/red/ToolTip"]
+[editable path="UI/MainMenu/ToolTips/blue/ToolTip"]
+[editable path="UI/MainMenu/ToolTips/lila/ToolTip"]
+[editable path="UI/MainMenu/ToolTips/control/ToolTip"]
+[editable path="UI/MainMenu/ToolTips/play/ToolTip"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://datspwyjlxw4m"
+path="res://.godot/imported/Titlescreen_A Dream to Redeem_[128bpm] master1.mp3.mp3-5bbd254672d4bb008cf5de1100846d5a.mp3str"
+
+[deps]
+
+source_file="res://audio/music/Titlescreen_A Dream to Redeem_[128bpm] master1.mp3.mp3"
+dest_files=["res://.godot/imported/Titlescreen_A Dream to Redeem_[128bpm] master1.mp3.mp3-5bbd254672d4bb008cf5de1100846d5a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

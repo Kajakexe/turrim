@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://x0ogkvmor31u"]
+
+[ext_resource type="PackedScene" uid="uid://twcbns3kdxtk" path="res://scenes/enemies/enemy_helmet.tscn" id="1_gmcjx"]
+[ext_resource type="Texture2D" uid="uid://c1rpaa10byy7w" path="res://sprites/knife.png" id="2_cn7ex"]
+
+[node name="enemy_helmet_knife" unique_id=591598459 instance=ExtResource("1_gmcjx")]
+helmet_speed = 20.0
+speed = 50.0
+
+[node name="weapon" parent="." index="1" unique_id=2002938475]
+texture = ExtResource("2_cn7ex")

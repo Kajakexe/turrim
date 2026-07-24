@@ -1,0 +1,12 @@
+[gd_resource type="Theme" format=3 uid="uid://cl8bv4ixivkhg"]
+
+[ext_resource type="FontFile" uid="uid://cx3fx1b6armtj" path="res://UI/fonts/Righteous.ttf" id="1_go05t"]
+
+[resource]
+Label/colors/font_color = Color(0.99215686, 0.90588236, 0.77254903, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 1
+Label/font_sizes/font_size = 15
+Label/fonts/font = ExtResource("1_go05t")
+LineEdit/font_sizes/font_size = 10
+LineEdit/fonts/font = ExtResource("1_go05t")

@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bs74vv4shqaf1"]
+
+[ext_resource type="AudioStream" uid="uid://77dhe3naar4d" path="res://audio/sfx/die/universfield-bottle-shatter-229205.mp3" id="1_u8md2"]
+
+[resource]
+random_pitch = 1.3348398
+streams_count = 1
+stream_0/stream = ExtResource("1_u8md2")

@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://dyoesvcx4tfoj"]
+
+[ext_resource type="AudioStream" uid="uid://djnsmwkpyj3q" path="res://audio/sfx/card_falling/card-shuffle.ogg" id="1_wuvc2"]
+
+[resource]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("1_wuvc2")

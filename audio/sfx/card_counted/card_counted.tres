@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://b36462p81fq8r"]
+
+[ext_resource type="AudioStream" uid="uid://cc4qacy5ei500" path="res://audio/sfx/card_counted/chips-stack-1.ogg" id="1_uyjrg"]
+[ext_resource type="AudioStream" uid="uid://c7l0w4srkc6p1" path="res://audio/sfx/card_counted/chips-stack-2.ogg" id="2_5flx8"]
+[ext_resource type="AudioStream" uid="uid://8hk106r2a1cd" path="res://audio/sfx/card_counted/chips-stack-3.ogg" id="3_kvr2c"]
+[ext_resource type="AudioStream" uid="uid://c55qknjnefi04" path="res://audio/sfx/card_counted/chips-stack-4.ogg" id="4_7mh5k"]
+[ext_resource type="AudioStream" uid="uid://7vw8jibhh8u5" path="res://audio/sfx/card_counted/chips-stack-5.ogg" id="5_umv37"]
+[ext_resource type="AudioStream" uid="uid://ck1givcessht4" path="res://audio/sfx/card_counted/chips-stack-6.ogg" id="6_j00ur"]
+
+[resource]
+streams_count = 6
+stream_0/stream = ExtResource("1_uyjrg")
+stream_1/stream = ExtResource("2_5flx8")
+stream_2/stream = ExtResource("3_kvr2c")
+stream_3/stream = ExtResource("4_7mh5k")
+stream_4/stream = ExtResource("5_umv37")
+stream_5/stream = ExtResource("6_j00ur")

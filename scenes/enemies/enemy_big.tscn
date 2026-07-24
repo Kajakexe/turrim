@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bx83wwd1abryc"]
+
+[ext_resource type="PackedScene" uid="uid://cc4rfwiwkipph" path="res://scenes/enemies/enemy_base.tscn" id="1_nnck1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nnck1"]
+load_path = "res://.godot/imported/big.png-a60732b8b4c476c29ba31c35ba2746c1.ctex"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nnck1"]
+radius = 8.0
+height = 26.0
+
+[node name="enemy_big" unique_id=591598459 instance=ExtResource("1_nnck1")]
+speed = 10.0
+health = 5
+
+[node name="Sprite2D" parent="." index="0" unique_id=1505099460]
+position = Vector2(0, -6)
+texture = SubResource("CompressedTexture2D_nnck1")
+hframes = 15
+
+[node name="weapon" parent="." index="1" unique_id=2002938475]
+visible = false
+
+[node name="AnimationPlayer" parent="." index="2" unique_id=1168602918]
+speed_scale = 0.8
+
+[node name="Area2D" parent="." index="3" unique_id=1446261983 groups=["sticky"]]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" parent="Area2D" index="0" unique_id=1002578988]
+shape = SubResource("CapsuleShape2D_nnck1")

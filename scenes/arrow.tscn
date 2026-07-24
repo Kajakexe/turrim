@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://b1m2gbpeo4gq4"]
+
+[ext_resource type="Script" uid="uid://b0v02wnsx5qor" path="res://scripts/arrow.gd" id="1_23jat"]
+[ext_resource type="Texture2D" uid="uid://cannsstixgyj8" path="res://sprites/arrow.png" id="1_umosx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2ds7"]
+radius = 3.1622777
+
+[sub_resource type="Animation" id="Animation_q8ifc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_23jat"]
+resource_name = "die"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_death"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8ifc"]
+_data = {
+&"RESET": SubResource("Animation_q8ifc"),
+&"die": SubResource("Animation_23jat")
+}
+
+[node name="Arrow" type="Node2D" unique_id=27593891]
+script = ExtResource("1_23jat")
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=254886730]
+rotation = 1.5707964
+texture = ExtResource("1_umosx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=387533719]
+rotation = 1.5707964
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=640785231]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_v2ds7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=595182661]
+libraries/ = SubResource("AnimationLibrary_q8ifc")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

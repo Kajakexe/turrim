@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cc00gbkliw5r6"]
+
+[ext_resource type="PackedScene" uid="uid://cc4rfwiwkipph" path="res://scenes/enemies/enemy_base.tscn" id="1_vs227"]
+[ext_resource type="Texture2D" uid="uid://b22arh2ng8jrn" path="res://sprites/shield.png" id="2_5mns1"]
+[ext_resource type="Script" uid="uid://oiipfq1mnwqa" path="res://scripts/enemies/enemy_shield.gd" id="2_r3a5f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2ds7"]
+radius = 4.0
+height = 14.0
+
+[node name="enemy_shield" unique_id=591598459 instance=ExtResource("1_vs227")]
+script = ExtResource("2_r3a5f")
+speed = 10.0
+
+[node name="shield_hitbox" type="Area2D" parent="." index="1" unique_id=1698034528 groups=["sticky"]]
+position = Vector2(-10, 1)
+scale = Vector2(0.8672027, 1.2713312)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shield_hitbox" index="0" unique_id=403281195]
+position = Vector2(-1.144979, -0.7147504)
+scale = Vector2(0.9877598, 1.2248104)
+shape = SubResource("CapsuleShape2D_v2ds7")
+
+[node name="weapon" parent="." index="2" unique_id=2002938475]
+texture = ExtResource("2_5mns1")

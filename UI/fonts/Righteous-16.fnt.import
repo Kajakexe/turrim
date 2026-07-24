@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://qecn2c1us2bg"
+path="res://.godot/imported/Righteous-16.fnt-fa6c24f591f51b88400ce5f273222ba6.fontdata"
+
+[deps]
+
+source_file="res://UI/fonts/Righteous-16.fnt"
+dest_files=["res://.godot/imported/Righteous-16.fnt-fa6c24f591f51b88400ce5f273222ba6.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

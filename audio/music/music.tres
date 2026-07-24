@@ -1,0 +1,27 @@
+[gd_resource type="AudioStreamInteractive" format=3 uid="uid://cxlsjrrtcsrji"]
+
+[ext_resource type="AudioStream" uid="uid://datspwyjlxw4m" path="res://audio/music/Titlescreen_A Dream to Redeem_[128bpm] master1.mp3.mp3" id="1_uubaa"]
+[ext_resource type="AudioStream" uid="uid://w30odo48mtbo" path="res://audio/music/Maintheme_Twilight of the Gods_[133bpm]_Master1.mp3.mp3" id="2_4228g"]
+
+[resource]
+clip_count = 2
+clip_0/name = &"Title"
+clip_0/stream = ExtResource("1_uubaa")
+clip_0/auto_advance = 0
+clip_1/name = &"Main"
+clip_1/stream = ExtResource("2_4228g")
+clip_1/auto_advance = 0
+_transitions = {
+Vector2i(0, 0): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 3,
+"to_time": 1
+},
+Vector2i(1, 1): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 3,
+"to_time": 1
+}
+}
